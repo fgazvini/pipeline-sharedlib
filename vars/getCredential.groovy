@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def call() {
-    withCredentials([usernamePassword(credentialsId: 'sonar-secrets', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-       echo "Password is: ${PASSWORD}"
-    }
+withCredentials([usernamePassword(credentialsId: 'sonar-secrets', passwordVariable: 'password', usernameVariable: 'username')]) {
+                sh "echo ${username} ${password} > ./credential.txt"
+            }
 }
