@@ -8,6 +8,7 @@ def call(args) {
             sh 'echo ${PATH}'
             sh 'echo ${HOME}'
             sh 'ls -l ${HOME}'
+            sh 'echo ${M2_HOME}'
             sh 'echo ${username} ${password} > ./credential.txt'
             withEnv(['PATH+EXTRA=${M2_HOME}']) {
                 sh 'mvn -version'
