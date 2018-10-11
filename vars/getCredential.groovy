@@ -9,7 +9,7 @@ def call(args) {
             sh 'echo ${HOME}'
             sh 'ls -l ${HOME}'
             sh 'echo ${username} ${password} > ./credential.txt'
-            withEnv(['PATH=${env.M2_HOME}:$PATH']) {
+            withEnv(['PATH+EXTRA=${M2_HOME}']) {
                 sh 'mvn -version'
 //            sh '$MYTOOL_HOME/bin/mvn -version'
   }
