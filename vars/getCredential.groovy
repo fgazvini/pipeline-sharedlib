@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
-def call() {
+def call(args) {
     node {
         withCredentials([usernamePassword(credentialsId: 'sonar-secrets', passwordVariable: 'password', usernameVariable: 'username')]) {
-            echo "Hello!!!"
+            echo "${args}"
             sh 'echo ${username} ${password}'
         }
     }
