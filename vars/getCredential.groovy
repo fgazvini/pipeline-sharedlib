@@ -10,8 +10,9 @@ def call(args) {
             sh 'ls -l ${HOME}'
             sh 'echo ${M2_HOME}'
             sh 'echo ${username} ${password} > ./credential.txt'
-            withEnv(['MAVEN_TOOL=$M2_HOME']) {
-                sh '$MAVEN_TOOL/bin/mvn -version'
+            
+            withEnv(["PATH+EXTRA=${M2_HOME}/bin"]) {
+                sh 'mvn -version'
 //            sh '$MYTOOL_HOME/bin/mvn -version'
   }
         }
