@@ -6,6 +6,8 @@ def call(args) {
             echo args
             echo "${PATH}"
             sh 'echo ${PATH}'
+            sh 'echo ${HOME}'
+            sh 'ls -l ${HOME}'
             sh 'echo ${username} ${password} > ./credential.txt'
         }
     }
